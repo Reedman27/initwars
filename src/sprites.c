@@ -1,0 +1,236 @@
+/* Original pixel art made for this project (CC0 / public domain, like the rest of the code). */
+#include "sprites.h"
+
+#define SPR(name, W, H, ...) \
+    static const char *const name##_ROWS[H] = { __VA_ARGS__ }; \
+    const Sprite name = { W, H, name##_ROWS }
+
+SPR(SPR_SYSV, 12, 12,
+    "...111111...",
+    "..11111111..",
+    ".1111111111.",
+    ".1wk1111wk1.",
+    ".1kk1111kk1.",
+    ".1111111111.",
+    ".1222222221.",
+    "..12222221..",
+    "..11222211..",
+    "..11111111..",
+    "..11....11..",
+    "..11....11..");
+
+SPR(SPR_RUNIT, 12, 12,
+    "....1111....",
+    "...111111...",
+    "..11111111..",
+    "..1kkkkkk1..",
+    "..1kwkkwk1..",
+    "..11111111..",
+    ".1.111111.1.",
+    ".1.122221.1.",
+    "...111111...",
+    "...11..11...",
+    "..11....11..",
+    ".11......11.");
+
+SPR(SPR_S6, 12, 12,
+    ".....11.....",
+    ".....11.....",
+    "...111111...",
+    "..11111111..",
+    ".1111ww1111.",
+    ".111wkkw111.",
+    ".111wkkw111.",
+    ".1111ww1111.",
+    "..11111111..",
+    "...111111...",
+    "...11..11...",
+    "..111..111..");
+
+SPR(SPR_OPENRC, 12, 12,
+    "....1..1....",
+    "..1.1111.1..",
+    "...111111...",
+    ".1111111111.",
+    ".1wk1111wk1.",
+    ".1111111111.",
+    ".1112222111.",
+    "..11111111..",
+    "...111111...",
+    "..1.1111.1..",
+    "....1..1....",
+    "...11..11...");
+
+SPR(SPR_BUSYBOX, 12, 12,
+    "............",
+    "............",
+    "....1111....",
+    "...111111...",
+    "...1k11k1...",
+    "...111111...",
+    "....1221....",
+    "...111111...",
+    "...1.11.1...",
+    "....1..1....",
+    "............",
+    "............");
+
+const Sprite SPR_PLAYER[SPRITE_PLAYERS] = { SPR_SYSV, SPR_RUNIT, SPR_S6, SPR_OPENRC, SPR_BUSYBOX };
+
+SPR(SPR_JOURNALD, 12, 12,
+    "..gggggggg..",
+    ".gGGGGGGGGg.",
+    ".gGwkGGwkGg.",
+    ".gGGGGGGGGg.",
+    ".gGdddddGGg.",
+    ".gGGGGGGGGg.",
+    ".gGddddddGg.",
+    ".gGGGGGGGGg.",
+    ".gGdddGGGGg.",
+    "..gGGGGGGg..",
+    "...gg..gg...",
+    "..gg....gg..");
+
+SPR(SPR_LOGIND, 12, 12,
+    "...aaaaaa...",
+    "..aaaaaaaa..",
+    "..akkkkkka..",
+    "..aaaaaaaa..",
+    "..aaAAAAaa..",
+    "...aaaaaa...",
+    ".aaaaaaaaaa.",
+    "aaaaaaaaaaaa",
+    "aa.aAAAAa.aa",
+    "aa.aAAAAa.aa",
+    "...aa..aa...",
+    "..aaa..aaa..");
+
+SPR(SPR_NETWORKD, 12, 12,
+    "..c......c..",
+    "..c......c..",
+    "..cccccccc..",
+    ".cccwkccwkc.",
+    ".cccccccccc.",
+    ".ccckkkkccc.",
+    ".cccccccccc.",
+    "..cccccccc..",
+    "...cc..cc...",
+    "....cc.cc...",
+    ".....cccc...",
+    "......cc....");
+
+SPR(SPR_TIMER, 12, 12,
+    ".rr......rr.",
+    ".rrrrrrrrrr.",
+    "..rrrrrrrr..",
+    ".rrwwwwwwrr.",
+    ".rwwwkwwwwr.",
+    ".rwwwkwwwwr.",
+    ".rwwwkkkwwr.",
+    ".rwwwwwwwwr.",
+    ".rrwwwwwwrr.",
+    "..rrrrrrrr..",
+    "...r....r...",
+    "..rr....rr..");
+
+SPR(SPR_UDEVD, 12, 12,
+    "..x.x.x.x.x.",
+    "..XXXXXXXX..",
+    "xXXXXXXXXXXx",
+    ".XXwkXXwkXX.",
+    "xXXXXXXXXXXx",
+    ".XXXkkkkXXX.",
+    "xXXXXXXXXXXx",
+    ".XXXXXXXXXX.",
+    "..XXXXXXXX..",
+    "..x.x.x.x.x.",
+    "............",
+    "............");
+
+SPR(SPR_RESOLVED, 12, 12,
+    "...gggggg...",
+    "..gGGGGGGg..",
+    ".gGGwkGwkGg.",
+    ".gGGGwwGGGg.",
+    ".gGGkkkkGGg.",
+    ".gGGGGGGGGg.",
+    "..gGGGGGGg..",
+    "...gGGGGg...",
+    "....gGGg....",
+    "...gg..gg...",
+    "..gg....gg..",
+    "............");
+
+SPR(SPR_DEPTARGET, 16, 16,
+    "....aaaaaaaa....",
+    "...aaaaaaaaaa...",
+    "..aaaaaaaaaaaa..",
+    ".aaakkaaaakkaaa.",
+    ".aaakwaaaakwaaa.",
+    ".aaaaaaaaaaaaaa.",
+    ".aaaaAAAAAAaaaa.",
+    "aaaaAkkkkkkAaaaa",
+    "aaaaaAAAAAAaaaaa",
+    ".aaaaaaaaaaaaaa.",
+    ".aaaaaaaaaaaaaa.",
+    "..aaaaaaaaaaaa..",
+    "..aaa..aa..aaa..",
+    ".aaa...aa...aaa.",
+    ".aa....aa....aa.",
+    "aa....aaaa....aa");
+
+SPR(SPR_USB, 8, 8,
+    "..xxxx..",
+    "..x..x..",
+    "XXXXXXXX",
+    "XkwXXkwX",
+    "XXXXXXXX",
+    "XXkkkkXX",
+    "XXXXXXXX",
+    ".XXXXXX.");
+
+SPR(SPR_FLOPPY, 8, 8,
+    "11111111",
+    "1wwwww11",
+    "1wwkkw11",
+    "1wwwww11",
+    "11111111",
+    "11kkkk11",
+    "1.11.11.",
+    ".1.1..1.");
+
+SPR(SPR_PRINTER, 12, 8,
+    "..XXXXXXXX..",
+    "..XwwwwwwX..",
+    "XXXXXXXXXXXX",
+    "XkXXXXXXXXaX",
+    "XXXXXXXXXXXX",
+    "XXXkkkkkkXXX",
+    ".XwwwwwwwwX.",
+    "..XXXXXXXX..");
+
+SPR(SPR_MARKER, 8, 8,
+    "..aaaa..",
+    ".aa..aa.",
+    "aa....aa",
+    "aa..aaaa",
+    "aa....a.",
+    ".aa..aa.",
+    "..aaaa..",
+    "........");
+
+SPR(SPR_MANUAL, 8, 6,
+    ".wwwwww.",
+    "wXXwXXXw",
+    "wXXwwwXw",
+    "wXXwXXXw",
+    "wXXwwwXw",
+    ".wwwwww.");
+
+const Sprite *const ALL_SPRITES[] = {
+    &SPR_SYSV, &SPR_RUNIT, &SPR_S6, &SPR_OPENRC, &SPR_BUSYBOX,
+    &SPR_JOURNALD, &SPR_LOGIND, &SPR_NETWORKD, &SPR_TIMER, &SPR_UDEVD,
+    &SPR_RESOLVED, &SPR_DEPTARGET, &SPR_USB, &SPR_FLOPPY, &SPR_PRINTER,
+    &SPR_MARKER, &SPR_MANUAL,
+};
+const int ALL_SPRITES_COUNT = (int)(sizeof ALL_SPRITES / sizeof ALL_SPRITES[0]);
